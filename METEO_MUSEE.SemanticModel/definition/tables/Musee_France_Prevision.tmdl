@@ -1,0 +1,165 @@
+/// Une ligne par musée et par créneau de prévision de 3 h, sur 5 jours (environ 40 créneaux par musée). Source : API OpenWeather (endpoint forecast), appelée à partir des coordonnées du référentiel Excel. Heures converties en heure locale. La colonne [Est créneau midi] isole un créneau par jour pour le tableau des prévisions. Reliée à Musee_France par [Musee].
+table Musee_France_Prevision
+	lineageTag: 71af819c-a863-4e66-bf3b-2f95831d35d3
+
+	/// Nom du musée. Clé de la relation vers Musee_France (plusieurs créneaux par musée).
+	column Musée
+		dataType: string
+		lineageTag: 49e2569e-ec42-46b5-b768-11588245f58c
+		summarizeBy: none
+		sourceColumn: Musée
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Date et heure locales du créneau de prévision (pas de 3 h), converties depuis le timestamp UTC de l’AP
+	column 'Date/heure du créneau'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e640c1e4-ecf7-434e-ade8-d454b99bb900
+		summarizeBy: none
+		sourceColumn: Date/heure du créneau
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Jour local du créneau de prévision. Affiché dans la colonne Date du tableau des prévisions.
+	column Jour
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 078e5567-1cad-4465-b8e9-6ee849c83478
+		summarizeBy: none
+		sourceColumn: Jour
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Vrai pour le créneau le plus proche de midi (un par jour : 13 h en hiver, 11 h en été). Sert de filtre au tableau des prévisions
+	column 'Est créneau midi'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7bbd7768-833e-431c-beef-48beeeba9798
+		summarizeBy: none
+		sourceColumn: Est créneau midi
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Température prévue sur le créneau, en °C.
+	column 'Température prévue (°C)'
+		dataType: double
+		lineageTag: 6a39b2fa-14be-463c-a1f3-737fa77fb96c
+		summarizeBy: none
+		sourceColumn: Température prévue (°C)
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Humidité relative prévue sur le créneau, en %.
+	column 'Humidité prévue (%)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 38cddc26-a29b-4f3b-9b72-71ea5dfa11f3
+		summarizeBy: none
+		sourceColumn: Humidité prévue (%)
+
+		annotation SummarizationSetBy = User
+
+	/// Pression atmosphérique prévue au niveau de la mer, en hPa.
+	column 'Pression prévue (hPa)'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 007b5106-2f7c-4783-8c4f-0fe84b0f92ec
+		summarizeBy: none
+		sourceColumn: Pression prévue (hPa)
+
+		annotation SummarizationSetBy = User
+
+	/// Code d’icône OpenWeather du créneau (ex. 10d), utilisé pour construire l’URL de l’icône.
+	column 'Code d’icône'
+		dataType: string
+		lineageTag: 72ebc1c9-b379-4451-b6ec-db357fcd1de5
+		summarizeBy: none
+		sourceColumn: Code d’icône
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Condition météo prévue en français (ex. « Bruine légère »), issue de Fonds_Meteo.
+	column 'Condition météo prévue'
+		dataType: string
+		lineageTag: c11b6a38-1b71-4370-89eb-2dd8c3db973c
+		summarizeBy: none
+		sourceColumn: Condition météo prévue
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Direction d’où vient le vent, en abrégé (ex. S.S.O, 16 secteurs).
+	column 'Direction du vent'
+		dataType: string
+		lineageTag: 5da71017-f519-43fd-81ba-c0dddc4080a8
+		summarizeBy: none
+		sourceColumn: Direction du vent
+
+		annotation SummarizationSetBy = Automatic
+
+	/// URL de l’icône météo OpenWeather du créneau, construite dans Power Query. Catégorie : URL de l’image.
+	column 'URL icône météo'
+		dataType: string
+		lineageTag: 65a89406-a1c6-4e6a-b30b-a0352402326b
+		summarizeBy: none
+		sourceColumn: URL icône météo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Musee_France_Prevision = m
+		mode: import
+		source =
+				let
+				    // Référentiel commun des musées (voir requête Referentiel_Musees)
+				    Source = Referentiel_Musees,
+				    // Seuls le nom (relation) et les coordonnées (appel API) sont nécessaires
+				    #"Garder colonnes référentiel" = Table.SelectColumns(Source, {"Musee", "Valeur", "ValeurLong"}),
+				    // Appelle l'API forecast (5 jours, pas de 3 h) pour chaque musée à partir de ses coordonnées
+				    #"Appeler API prévisions" = Table.AddColumn(#"Garder colonnes référentiel", "Forecast", each Json.Document(Web.Contents(
+				        "https://api.openweathermap.org",
+				        [ RelativePath = "data/2.5/forecast",
+				          Query = [ lat = [Valeur], lon = [ValeurLong], APPID = ApiKey, units = "Metric" ] ]))),
+				    // Ne garde que la liste des créneaux et les informations sur la ville (fuseau horaire)
+				    #"Développer réponse API" = Table.ExpandRecordColumn(#"Appeler API prévisions", "Forecast", {"list", "city"}, {"Forecast.list", "Forecast.city"}),
+				    // Une ligne par créneau de 3 h (environ 40 par musée)
+				    #"Développer créneaux" = Table.ExpandListColumn(#"Développer réponse API", "Forecast.list"),
+				    #"Développer détail créneau" = Table.ExpandRecordColumn(#"Développer créneaux", "Forecast.list", {"dt", "main", "weather", "wind"}, {"dt", "Forecast.list.main", "Forecast.list.weather", "Forecast.list.wind"}),
+				    #"Développer mesures" = Table.ExpandRecordColumn(#"Développer détail créneau", "Forecast.list.main", {"temp", "pressure", "humidity"}, {"Forecast.list.main.temp", "Forecast.list.main.pressure", "Forecast.list.main.humidity"}),
+				    // weather est une liste : l'API peut renvoyer plusieurs conditions pour un même créneau (dédoublonnage plus bas)
+				    #"Développer conditions météo" = Table.ExpandListColumn(#"Développer mesures", "Forecast.list.weather"),
+				    #"Développer détail condition" = Table.ExpandRecordColumn(#"Développer conditions météo", "Forecast.list.weather", {"description", "icon"}, {"Forecast.list.weather.description", "Forecast.list.weather.icon"}),
+				    #"Développer vent" = Table.ExpandRecordColumn(#"Développer détail condition", "Forecast.list.wind", {"deg"}, {"degrees"}),
+				    #"Développer ville" = Table.ExpandRecordColumn(#"Développer vent", "Forecast.city", {"timezone"}, {"Forecast.city.timezone"}),
+				    // Une seule ligne par musée et par créneau
+				    #"Supprimer doublons créneau" = Table.Distinct(#"Développer ville", {"Musee", "dt"}),
+				    // Fusion avec Fonds_Meteo sur la condition météo (en anglais) : libellé français
+				    #"Fusionner Fonds_Meteo" = Table.NestedJoin(#"Supprimer doublons créneau", {"Forecast.list.weather.description"}, Fonds_Meteo, {"Weather"}, "Fonds", JoinKind.LeftOuter),
+				    #"Développer Fonds_Meteo" = Table.ExpandTableColumn(#"Fusionner Fonds_Meteo", "Fonds", {"Weather - Francais", "Icône"}, {"Weather - Francais", "Icône"}),
+				    // Direction du vent abrégée (16 secteurs de 22,5°)
+				    #"Ajouter direction vent" = Table.AddColumn(#"Développer Fonds_Meteo", "wind direction description", each if [degrees] >= 348.75 then "N" else if [degrees] > 326.25 then "N.N.O" else if [degrees] > 303.75 then "N.O" else if [degrees] > 281.25 then "O.N.O" else if [degrees] > 258.75 then "O" else if [degrees] > 236.25 then "O.S.O" else if [degrees] > 213.75 then "S.O" else if [degrees] > 191.25 then "S.S.O" else if [degrees] > 168.75 then "S" else if [degrees] > 146.25 then "S.S.E" else if [degrees] > 123.75 then "S.E" else if [degrees] > 101.25 then "E.S.E" else if [degrees] > 78.75 then "E" else if [degrees] > 56.25 then "E.N.E" else if [degrees] > 33.75 then "N.E" else if [degrees] > 11.25 then "N.N.E" else if [degrees] >= 0 then "N" else null, type text),
+				    // Convertit le timestamp Unix (dt, UTC) de chaque créneau en heure locale via Forecast.city.timezone. Limite : décalage figé au moment de l'actualisation (écart de 1 h possible autour des changements d'heure).
+				    #"Calculer date locale prévision" = Table.AddColumn(#"Ajouter direction vent", "date", each #datetime(1970, 1, 1, 0, 0, 0) + #duration(0, 0, 0, [dt] + [Forecast.city.timezone]), type datetime),
+				    // Jour local du créneau (colonne « Jour » dans le modèle)
+				    #"Extraire jour local" = Table.AddColumn(#"Calculer date locale prévision", "Forecast.list.dt_txt - Copier", each DateTime.Date([date]), type date),
+				    // Repère le créneau le plus proche de midi : un seul par jour (13h en hiver, 11h en été, car l'API fournit un créneau toutes les 3 h UTC)
+				    #"Repérer créneau midi" = Table.AddColumn(#"Extraire jour local", "Est créneau midi", each Time.Hour(DateTime.Time([date])) >= 11 and Time.Hour(DateTime.Time([date])) <= 13, type logical),
+				    // URL de l'icône météo OpenWeather du créneau (affichée dans le tableau des prévisions)
+				        // URL de l'icône Meteocons (Bas Milius, licence MIT) : variante jour/nuit selon le code OpenWeather (d/n) ; icône OpenWeather en secours si la condition est absente de Fonds_Meteo
+				    #"Ajouter URL icône" = Table.AddColumn(#"Repérer créneau midi", "Prevision weather image url", each if [Icône] = null then "https://openweathermap.org/img/w/" & [Forecast.list.weather.icon] & ".png" else "https://cdn.jsdelivr.net/npm/@bybas/weather-icons@2.0.0/production/line/all/" & Text.Replace([Icône], "[dn]", if Text.End([Forecast.list.weather.icon], 1) = "n" then "night" else "day") & ".svg", type text),
+				    // Ne conserve que les colonnes utilisées par le rapport (tableau des prévisions, mesures, relation avec Musee_France)
+				    #"Garder colonnes utiles" = Table.SelectColumns(#"Ajouter URL icône", {"Musee", "date", "Forecast.list.dt_txt - Copier", "Est créneau midi", "Forecast.list.main.temp", "Forecast.list.main.humidity", "Forecast.list.main.pressure", "Forecast.list.weather.icon", "Weather - Francais", "wind direction description", "Prevision weather image url"}),
+				    // Typage final et explicite de toutes les colonnes conservées
+				    #"Typer colonnes" = Table.TransformColumnTypes(#"Garder colonnes utiles", {{"Musee", type text}, {"date", type datetime}, {"Forecast.list.dt_txt - Copier", type date}, {"Est créneau midi", type logical}, {"Forecast.list.main.temp", type number}, {"Forecast.list.main.humidity", Int64.Type}, {"Forecast.list.main.pressure", Int64.Type}, {"Forecast.list.weather.icon", type text}, {"Weather - Francais", type text}, {"wind direction description", type text}, {"Prevision weather image url", type text}}),
+				    // Noms de colonnes du modèle (étape générée par Power BI lors des renommages dans la vue Modèle : ne pas modifier)
+				    #"Colonnes renommées" = Table.RenameColumns(#"Typer colonnes", {{"Musee", "Musée"}, {"date", "Date/heure du créneau"}, {"Forecast.list.dt_txt - Copier", "Jour"}, {"Forecast.list.main.temp", "Température prévue (°C)"}, {"Forecast.list.main.humidity", "Humidité prévue (%)"}, {"Forecast.list.main.pressure", "Pression prévue (hPa)"}, {"Forecast.list.weather.icon", "Code d’icône"}, {"Prevision weather image url", "URL icône météo"}, {"Weather - Francais", "Condition météo prévue"}, {"wind direction description", "Direction du vent"}})
+				in
+				    #"Colonnes renommées"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

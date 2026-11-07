@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "c015f93152aad5c05a28",
+  "position": {
+    "x": 39.794301412083954,
+    "y": 665.11130839712553,
+    "z": 7,
+    "height": 54.888691602874424,
+    "width": 1200.6901288128779,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Sources : ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "10pt",
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": "musées : Museums-PASS-Musées (museumspass.com) · données météo : OpenWeather (openweathermap.org) · photos de fond : Unsplash (crédits dans la table Fonds_Meteo)",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#9d9d9d"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Projet personnel réalisé avec Power BI. Données météo actualisées automatiquement dans le service Power BI.",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#9d9d9d"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

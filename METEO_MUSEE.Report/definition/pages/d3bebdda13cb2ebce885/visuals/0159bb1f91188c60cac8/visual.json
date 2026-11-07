@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "0159bb1f91188c60cac8",
+  "position": {
+    "x": 39.878419452887542,
+    "y": 166.32218844984803,
+    "z": 3,
+    "height": 84,
+    "width": 640,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Un outil simple pour préparer une sortie au musée : choisissez un musée, consultez sa météo en temps réel, les prévisions des cinq prochains jours et l'itinéraire pour vous y rendre.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#d4d4d4"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

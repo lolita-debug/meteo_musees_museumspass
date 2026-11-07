@@ -1,0 +1,37 @@
+/// Table technique d'une ligne : horodatage de la dernière actualisation, en heure de Paris (heure d'été gérée par règle européenne, sans appel API). Utilisée par la mesure [Actualisation].
+table Info_Actualisation
+	lineageTag: be4fb1fc-97d3-4441-8adf-48e80e7b2b24
+
+	column DerniereActualisation
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4d7b223a-6cc4-439d-a6ee-f5e55c397a4e
+		summarizeBy: none
+		sourceColumn: DerniereActualisation
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Info_Actualisation = m
+		mode: import
+		source =
+				let
+				    // Heure UTC au moment de l'actualisation (identique dans Desktop et dans le service)
+				    MaintenantUTC = DateTimeZone.RemoveZone(DateTimeZone.UtcNow()),
+				    Annee = Date.Year(MaintenantUTC),
+				    // Dernier dimanche d'un mois de 31 jours (mars et octobre)
+				    DernierDimanche = (mois as number) as date => Date.StartOfWeek(#date(Annee, mois, 31), Day.Sunday),
+				    // Heure d'été européenne : du dernier dimanche de mars au dernier dimanche d'octobre, à 01:00 UTC
+				    DebutEte = DernierDimanche(3) & #time(1, 0, 0),
+				    FinEte = DernierDimanche(10) & #time(1, 0, 0),
+				    // Décalage Paris : +2 h en été, +1 h en hiver
+				    Decalage = if MaintenantUTC >= DebutEte and MaintenantUTC < FinEte then 2 else 1,
+				    HeureParis = MaintenantUTC + #duration(0, Decalage, 0, 0),
+				    // Table d'une ligne lue par la mesure [Actualisation]
+				    Resultat = #table(type table [DerniereActualisation = datetime], {{HeureParis}})
+				in
+				    Resultat
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,170 @@
+/// Table technique sans données, qui regroupe toutes les mesures DAX du rapport (météo du jour, prévisions, horodatage d'actualisation). Le préfixe _ la place en tête du volet Données.
+table _Mesures
+	lineageTag: 641a0568-977a-4552-8daa-9972ea32d3c8
+
+	/// Température ressentie du musée sélectionné, formatée en texte (ex. « 8°C »).
+	measure 'Température ressentie' =
+			
+			FORMAT(
+			    MIN('Musee_France'[Température ressentie (°C)]),
+			    "#0" & UNICHAR(176)&"C"
+			)
+		displayFolder: Météo actuelle
+		lineageTag: a3d8367e-c6e5-464f-80a0-7c957f88ae9b
+
+	/// Température max observée au même instant dans la zone (pas le max du jour), formatée en texte. Souvent égale à la température actuelle.
+	measure 'Température max instantanée' =
+			
+			FORMAT(
+			    MIN('Musee_France'[Température max instantanée (°C)]),
+			    "#0" & UNICHAR(176)&"C"
+			)
+		displayFolder: Météo actuelle
+		lineageTag: b5569504-9e9b-417e-86b1-095b42836cad
+
+	/// Température min observée au même instant dans la zone (pas le min du jour), formatée en texte. Souvent égale à la température actuelle.
+	measure 'Température min instantanée' =
+			
+			FORMAT(
+			    MIN('Musee_France'[Température min instantanée (°C)]),
+			    "#0" & UNICHAR(176)&"C"
+			)
+		displayFolder: Météo actuelle
+		lineageTag: 156e8d4a-e145-4285-9ae8-40dac0c6f965
+
+	/// Température actuelle du musée sélectionné, formatée en texte (ex. « 9°C »).
+	measure 'Température actuelle' = ```
+			
+			FORMAT(
+			    MIN(
+			        'Musee_France'[Température (°C)]
+			    ),
+			    "#0" & UNICHAR(176)&"C"
+			)  
+			```
+		displayFolder: Météo actuelle
+		lineageTag: 02e6fa00-4554-4595-9414-46158f6c2c13
+
+	/// Température prévue pour le créneau affiché, formatée en texte (ex. « 12°C »). Utilisée dans le tableau des prévisions.
+	measure 'Température prévue' =
+			
+			FORMAT(
+			    MIN('Musee_France_Prevision'[Température prévue (°C)]),
+			    "#0" & UNICHAR(176)&"C"
+			)
+		displayFolder: Prévisions
+		lineageTag: 1193ddd5-c7fc-4f25-a838-21caa7b4fcbe
+
+	/// Direction du vent abrégée (ex. S.S.O) pour le créneau de prévision affiché. Utilisée dans le tableau « Prévisions météo sur 5 jours ». MIN sert à renvoyer l'unique valeur du créneau filtré.
+	measure 'Direction du vent prévue' =
+			
+			MIN ( 'Musee_France_Prevision'[Direction du vent] )
+		displayFolder: Prévisions
+		lineageTag: f03a30f1-126f-43b1-98a8-49b3c939d435
+
+	/// URL de l’icône météo du créneau affiché. Catégorie : URL de l’image.
+	measure 'Icône météo prévue' = ```
+			
+			MIN('Musee_France_Prevision'[URL icône météo])
+			
+			```
+		displayFolder: Prévisions
+		lineageTag: 2a4ee237-6ee7-48c5-87f3-db797d3bfecb
+		dataCategory: ImageUrl
+
+	/// Condition météo prévue en français pour le créneau affiché. Utilisée dans le tableau des prévisions.
+	measure 'Libellé météo prévu' = ```
+			
+			    MIN('Musee_France_Prevision'[Condition météo prévue])
+			```
+		displayFolder: Prévisions
+		lineageTag: 7ecb22d2-6cc7-4e98-8381-fc0fa4101c39
+
+	/// Phrase « Dernière actualisation météo : jj/mm/aaaa à hhhmm » construite à partir de Info_Actualisation.
+	measure 'Texte dernière actualisation' =
+			
+			VAR d = MAX ( Info_Actualisation[DerniereActualisation] )
+			RETURN
+			    "Dernière actualisation météo : "
+			        & FORMAT ( d, "dd/MM/yyyy" ) & " à "
+			        & FORMAT ( d, "hh" ) & "h" & FORMAT ( d, "nn" )
+		displayFolder: Technique
+		lineageTag: 3d3d9d21-90ac-4150-af84-fcb3cd6f35c0
+
+	/// Température maximale du jour pour le musée sélectionné, en °C : la plus haute entre la température actuelle et les températures prévues pour les créneaux restants de la journée (jour de la dernière actualisation, heure de Paris). Ne tient pas compte des heures déjà écoulées (pas d'historique dans l'API gratuite).
+	measure 'Température max du jour' =
+			
+			// Jour de référence : jour de la dernière actualisation (heure de Paris),
+			// plutôt que TODAY() qui renvoie la date UTC dans le service
+			VAR DateActualisation = MAX ( Info_Actualisation[DerniereActualisation] )
+			VAR JourReference =
+			    DATE ( YEAR ( DateActualisation ), MONTH ( DateActualisation ), DAY ( DateActualisation ) )
+			// Température maximale parmi les créneaux de prévision restants du jour
+			// (le filtre sur le musée vient du segment, via la relation)
+			VAR MaxPrevu =
+			    CALCULATE (
+			        MAX ( Musee_France_Prevision[Température prévue (°C)] ),
+			        Musee_France_Prevision[Jour] = JourReference
+			    )
+			// Température actuelle du musée : garantit une valeur même s'il ne reste
+			// plus de créneau de prévision aujourd'hui (fin de soirée)
+			VAR TemperatureActuelle = MAX ( Musee_France[Température (°C)] )
+			RETURN
+			    // La plus haute des deux. COALESCE remplace un MAXPrevu vide par la température actuelle,
+			    // car MAX traite une valeur vide comme 0
+			    MAX ( COALESCE ( MaxPrevu, TemperatureActuelle ), TemperatureActuelle )
+		formatString: 0"°C"
+		displayFolder: Météo actuelle
+		lineageTag: a6548bbf-2776-434d-b0bc-014b94f44161
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Température mnimale du jour pour le musée sélectionné, en °C : la plus basse entre la température actuelle et les températures prévues pour les créneaux restants de la journée (jour de la dernière actualisation, heure de Paris). Ne tient pas compte des heures déjà écoulées (pas d'historique dans l'API gratuite).
+	measure 'Température min du jour' =
+			
+			// Jour de référence : jour de la dernière actualisation (heure de Paris),
+			// plutôt que TODAY() qui renvoie la date UTC dans le service
+			VAR DateActualisation = MAX ( Info_Actualisation[DerniereActualisation] )
+			VAR JourReference =
+			    DATE ( YEAR ( DateActualisation ), MONTH ( DateActualisation ), DAY ( DateActualisation ) )
+			// Température MINimale parmi les créneaux de prévision restants du jour
+			// (le filtre sur le musée vient du segment, via la relation)
+			VAR MINPrevu =
+			    CALCULATE (
+			        MIN ( Musee_France_Prevision[Température prévue (°C)] ),
+			        Musee_France_Prevision[Jour] = JourReference
+			    )
+			// Température actuelle du musée : garantit une valeur même s'il ne reste
+			// plus de créneau de prévision aujourd'hui (fin de soirée)
+			VAR TemperatureActuelle = MIN ( Musee_France[Température (°C)] )
+			RETURN
+			    // La plus basse des deux. COALESCE remplace un MinPrevu vide par la température actuelle,
+			    // car MIN traite une valeur vide comme 0
+			    MIN ( COALESCE ( MinPrevu, TemperatureActuelle ), TemperatureActuelle )
+		formatString: " 0""°C"""
+		displayFolder: Météo actuelle
+		lineageTag: 08c38eb7-5b2d-49a3-ab06-5c6287c7b254
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Crédit Unsplash de l'image de fond affichée sur la page Musée (« Photo : Nom / Unsplash »), extrait du code HTML de la table Fonds_Meteo.
+	measure 'Crédit photo' =
+			
+			// Crédit du photographe de l'image de fond affichée (une seule ligne : le musée sélectionné)
+			SELECTEDVALUE ( Musee_France[Crédit photo] )
+		lineageTag: 872ef7d3-1079-4fcd-b07f-c5e352fa1132
+
+	partition _Mesures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Colonne 1" = _t]),
+				    #"Type modifié" = Table.TransformColumnTypes(Source,{{"Colonne 1", type text}}),
+				    #"Colonnes supprimées" = Table.RemoveColumns(#"Type modifié",{"Colonne 1"})
+				in
+				    #"Colonnes supprimées"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

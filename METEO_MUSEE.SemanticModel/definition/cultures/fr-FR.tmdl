@@ -1,0 +1,3229 @@
+cultureInfo fr-FR
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "entity__mesure.icône_météo_prévue": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Icône météo prévue"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "icône météo prévue": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.libellé_météo_prévu": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Libellé météo prévu"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "libellé météo prévu": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Météo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.température_prévue": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Température prévue"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "température prévue": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Température": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.direction_du_vent_prévue": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Direction du vent prévue"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "direction du vent prévue": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Direction du vent": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france_prevision.jour": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France_Prevision",
+			          "ConceptualProperty": "Jour"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "jour": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Date": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "entity__mesure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "_mesure": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.température_ressentie": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Température ressentie"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "température ressentie": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.température_max_instantanée": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Température max instantanée"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "température max instantanée": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "température maximum instantanée": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.température_min_instantanée": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Température min instantanée"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "température min instantanée": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "température minimum instantanée": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.température_actuelle": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Température actuelle"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "température actuelle": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.texte_dernière_actualisation": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Texte dernière actualisation"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "texte dernière actualisation": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.température_max_du_jour": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Température max du jour"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "température max du jour": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "température maximum du jour": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.température_min_du_jour": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Température min du jour"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "température min du jour": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "température minimum du jour": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "musee france": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Musee_France": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.musee": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Musee"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "musee": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.code_icône": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Code icône"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "code icône": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "id icône": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "key icône": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.température_C": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Température (°C)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "température (°C)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "température": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.température_ressentie_C": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Température ressentie (°C)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "température ressentie (°C)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "température ressentie": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.température_min_instantanée_C": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Température min instantanée (°C)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "température min instantanée (°C)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "température min instantanée": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.température_max_instantanée_C": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Température max instantanée (°C)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "température max instantanée (°C)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "température max instantanée": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.pression_hPa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Pression (hPa)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "pression (hPa)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "pression": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.humidité": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Humidité (%)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "humidité": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "humidité (%)": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "Units": [
+			        "percentage",
+			        "%"
+			      ]
+			    },
+			    "musee_france.vitesse_du_vent": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Vitesse du vent (m/s)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vitesse du vent": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "vitesse du vent (m/s)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "vitesse du vent (m/)": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "vitesse du outlet": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "vitesse du aperture": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "vitesse du chimney": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "vitesse du flue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "vitesse du opening": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "vitesse du escape": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "vitesse du exhaust": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "vitesse du hole": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "vitesse du gap": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ],
+			      "Units": [
+			        "meters per second",
+			        "m/s"
+			      ]
+			    },
+			    "musee_france.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "musee_france.direction_du_vent": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Direction du vent"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "direction du vent": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "direction du outlet": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "direction du aperture": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "direction du chimney": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "direction du flue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "direction du opening": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "direction du escape": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "direction du exhaust": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "direction du hole": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "direction du gap": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.URL_image_de_fond": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "URL image de fond"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "URL image de fond": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "website image de fond": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "site image de fond": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "web address image de fond": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.494
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.condition_météo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Condition météo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "condition météo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.URL_icône_météo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "URL icône météo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "URL icône météo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "website icône météo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "site icône météo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "web address icône météo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.484
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.force_du_vent": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Force du vent"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "force du vent": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "force du outlet": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "force du aperture": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "force du chimney": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "force du flue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "force du opening": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "force du escape": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "force du exhaust": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "force du hole": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "force du gap": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.itiniraire": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "itiniraire"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "itiniraire": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.lien_info_pratique": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Lien info pratiques"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "lien info pratique": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "pratique": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "info pratique": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.ville_et_musee_colonne_ref": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Ville et musee (colonne ref)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "ville et musee (colonne ref)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ville et musee": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.segment_musee_et_ville": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Segment musee et ville"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "segment musee et ville": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "division musee et ville": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "subdivision musee et ville": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "section musee et ville": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "sector musee et ville": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "bit musee et ville": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "fragment musee et ville": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "part musee et ville": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "piece musee et ville": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portion musee et ville": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "slice musee et ville": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.itinéraire_formate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "Itinéraire formate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "itinéraire formate": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france.lien_url_vers_site_meteo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France",
+			          "ConceptualProperty": "lien url vers site meteo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "lien url vers site meteo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "lien url ver site meteo": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "lien website ver site meteo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "lien url ver website meteo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "lien url ver campus meteo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "lien url ver homepage meteo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "lien url ver locale meteo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "lien site ver site meteo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "lien url ver place meteo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "lien url ver position meteo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "lien url ver spot meteo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "lien web address ver site meteo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.503
+			          }
+			        }
+			      ]
+			    },
+			    "info_actualisation": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Info_Actualisation"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "info actualisation": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Info_Actualisation": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "actualisation": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "info_actualisation.derniere_actualisation": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Info_Actualisation",
+			          "ConceptualProperty": "DerniereActualisation"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "derniere actualisation": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DerniereActualisation": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "musee_france_prevision": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France_Prevision"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "musee france prevision": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Musee_France_Prevision": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france_prevision.musée": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France_Prevision",
+			          "ConceptualProperty": "Musée"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "musée": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france_prevision.date_heure_du_créneau": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France_Prevision",
+			          "ConceptualProperty": "Date/heure du créneau"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date/heure du créneau": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date heure du créneau": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "heure du créneau": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "moment /heure du créneau": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "moment heure du créneau": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "period /heure du créneau": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "period heure du créneau": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "musee_france_prevision.est_créneau_midi": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France_Prevision",
+			          "ConceptualProperty": "Est créneau midi"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "est créneau midi": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france_prevision.température_prévue_C": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France_Prevision",
+			          "ConceptualProperty": "Température prévue (°C)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "température prévue (°C)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "température prévue": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france_prevision.humidité_prévue": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France_Prevision",
+			          "ConceptualProperty": "Humidité prévue (%)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "humidité prévue": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "humidité prévue (%)": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "Units": [
+			        "percentage",
+			        "%"
+			      ]
+			    },
+			    "musee_france_prevision.pression_prévue_hPa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France_Prevision",
+			          "ConceptualProperty": "Pression prévue (hPa)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "pression prévue (hPa)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "pression prévue": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france_prevision.code_dicône": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France_Prevision",
+			          "ConceptualProperty": "Code d’icône"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "code d’icône": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "id d’icône": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "key d’icône": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france_prevision.condition_météo_prévue": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France_Prevision",
+			          "ConceptualProperty": "Condition météo prévue"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "condition météo prévue": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france_prevision.direction_du_vent": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France_Prevision",
+			          "ConceptualProperty": "Direction du vent"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "direction du vent": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "direction du outlet": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "direction du aperture": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "direction du chimney": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "direction du flue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "direction du opening": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "direction du escape": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "direction du exhaust": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "direction du hole": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "direction du gap": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "musee_france_prevision.URL_icône_météo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Musee_France_Prevision",
+			          "ConceptualProperty": "URL icône météo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "URL icône météo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "website icône météo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "site icône météo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "web address icône météo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.484
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "musee_france_prevision_has_entity__mesure_icône_météo_prévue": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "entity__mesure.icône_météo_prévue": {
+			          "Target": {
+			            "Entity": "entity__mesure.icône_météo_prévue"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.icône_météo_prévue"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_icône_météo_prévue"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_entity__mesure_libellé_météo_prévu": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "entity__mesure.libellé_météo_prévu": {
+			          "Target": {
+			            "Entity": "entity__mesure.libellé_météo_prévu"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.libellé_météo_prévu"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_libellé_météo_prévu"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_entity__mesure_température_prévue": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "entity__mesure.température_prévue": {
+			          "Target": {
+			            "Entity": "entity__mesure.température_prévue"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.température_prévue"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_température_prévue"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_entity__mesure_direction_du_vent_prévue": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "entity__mesure.direction_du_vent_prévue": {
+			          "Target": {
+			            "Entity": "entity__mesure.direction_du_vent_prévue"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.direction_du_vent_prévue"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_direction_du_vent_prévue"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_jour": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "musee_france_prevision.jour": {
+			          "Target": {
+			            "Entity": "musee_france_prevision.jour"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "musee_france_prevision.jour"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_jour"
+			        }
+			      ]
+			    },
+			    "musee_france_has_entity__mesure_température_ressentie": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "entity__mesure.température_ressentie": {
+			          "Target": {
+			            "Entity": "entity__mesure.température_ressentie"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.température_ressentie"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_température_ressentie"
+			        }
+			      ]
+			    },
+			    "musee_france_has_entity__mesure_température_max_instantanée": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "entity__mesure.température_max_instantanée": {
+			          "Target": {
+			            "Entity": "entity__mesure.température_max_instantanée"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.température_max_instantanée"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_température_max_instantanée"
+			        }
+			      ]
+			    },
+			    "musee_france_has_entity__mesure_température_min_instantanée": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "entity__mesure.température_min_instantanée": {
+			          "Target": {
+			            "Entity": "entity__mesure.température_min_instantanée"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.température_min_instantanée"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_température_min_instantanée"
+			        }
+			      ]
+			    },
+			    "musee_france_has_entity__mesure_température_actuelle": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "entity__mesure.température_actuelle": {
+			          "Target": {
+			            "Entity": "entity__mesure.température_actuelle"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.température_actuelle"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_température_actuelle"
+			        }
+			      ]
+			    },
+			    "info_actualisation_has_entity__mesure_texte_dernière_actualisation": {
+			      "Binding": {
+			        "ConceptualEntity": "Info_Actualisation"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "info_actualisation": {
+			          "Target": {
+			            "Entity": "info_actualisation"
+			          }
+			        },
+			        "entity__mesure.texte_dernière_actualisation": {
+			          "Target": {
+			            "Entity": "entity__mesure.texte_dernière_actualisation"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "info_actualisation"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.texte_dernière_actualisation"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "info_actualisations_have_texte_dernière_actualisation"
+			        }
+			      ]
+			    },
+			    "musee_france_has_entity__mesure_température_max_du_jour": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "entity__mesure.température_max_du_jour": {
+			          "Target": {
+			            "Entity": "entity__mesure.température_max_du_jour"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.température_max_du_jour"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_température_max_du_jour"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_entity__mesure_température_max_du_jour": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "entity__mesure.température_max_du_jour": {
+			          "Target": {
+			            "Entity": "entity__mesure.température_max_du_jour"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.température_max_du_jour"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_température_max_du_jour"
+			        }
+			      ]
+			    },
+			    "musee_france_has_entity__mesure_température_min_du_jour": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "entity__mesure.température_min_du_jour": {
+			          "Target": {
+			            "Entity": "entity__mesure.température_min_du_jour"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.température_min_du_jour"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_température_min_du_jour"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_entity__mesure_température_min_du_jour": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "entity__mesure.température_min_du_jour": {
+			          "Target": {
+			            "Entity": "entity__mesure.température_min_du_jour"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.température_min_du_jour"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_température_min_du_jour"
+			        }
+			      ]
+			    },
+			    "musee_france_has_code_icône": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.code_icône": {
+			          "Target": {
+			            "Entity": "musee_france.code_icône"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.code_icône"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_code_icônes"
+			        }
+			      ]
+			    },
+			    "musee_france_has_température_C": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.température_C": {
+			          "Target": {
+			            "Entity": "musee_france.température_C"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.température_C"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_température_C"
+			        }
+			      ]
+			    },
+			    "musee_france_has_température_ressentie_C": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.température_ressentie_C": {
+			          "Target": {
+			            "Entity": "musee_france.température_ressentie_C"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.température_ressentie_C"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_température_ressentie_C"
+			        }
+			      ]
+			    },
+			    "musee_france_has_température_min_instantanée_C": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.température_min_instantanée_C": {
+			          "Target": {
+			            "Entity": "musee_france.température_min_instantanée_C"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.température_min_instantanée_C"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_température_min_instantanée_C"
+			        }
+			      ]
+			    },
+			    "musee_france_has_température_max_instantanée_C": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.température_max_instantanée_C": {
+			          "Target": {
+			            "Entity": "musee_france.température_max_instantanée_C"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.température_max_instantanée_C"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_température_max_instantanée_C"
+			        }
+			      ]
+			    },
+			    "musee_france_has_pression_hPa": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.pression_hPa": {
+			          "Target": {
+			            "Entity": "musee_france.pression_hPa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.pression_hPa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_pression_hPa"
+			        }
+			      ]
+			    },
+			    "musee_france_has_humidité": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.humidité": {
+			          "Target": {
+			            "Entity": "musee_france.humidité"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.humidité"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_humidité"
+			        }
+			      ]
+			    },
+			    "musee_france_has_vitesse_du_vent": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.vitesse_du_vent": {
+			          "Target": {
+			            "Entity": "musee_france.vitesse_du_vent"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.vitesse_du_vent"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_vitesse_du_vents"
+			        }
+			      ]
+			    },
+			    "musee_france_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.date": {
+			          "Target": {
+			            "Entity": "musee_france.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_dates"
+			        }
+			      ]
+			    },
+			    "musee_france_has_direction_du_vent": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.direction_du_vent": {
+			          "Target": {
+			            "Entity": "musee_france.direction_du_vent"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.direction_du_vent"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_direction_du_vents"
+			        }
+			      ]
+			    },
+			    "musee_france_has_URL_image_de_fond": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.URL_image_de_fond": {
+			          "Target": {
+			            "Entity": "musee_france.URL_image_de_fond"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.URL_image_de_fond"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_URL_image_de_fond"
+			        }
+			      ]
+			    },
+			    "musee_france_has_condition_météo": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.condition_météo": {
+			          "Target": {
+			            "Entity": "musee_france.condition_météo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.condition_météo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_condition_météos"
+			        }
+			      ]
+			    },
+			    "musee_france_has_URL_icône_météo": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.URL_icône_météo": {
+			          "Target": {
+			            "Entity": "musee_france.URL_icône_météo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.URL_icône_météo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_URL_icône_météos"
+			        }
+			      ]
+			    },
+			    "musee_france_has_force_du_vent": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.force_du_vent": {
+			          "Target": {
+			            "Entity": "musee_france.force_du_vent"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.force_du_vent"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_force_du_vents"
+			        }
+			      ]
+			    },
+			    "musee_france_has_lien_info_pratique": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.lien_info_pratique": {
+			          "Target": {
+			            "Entity": "musee_france.lien_info_pratique"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.lien_info_pratique"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_lien_info_pratiques"
+			        }
+			      ]
+			    },
+			    "musee_france_has_segment_musee_et_ville": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.segment_musee_et_ville": {
+			          "Target": {
+			            "Entity": "musee_france.segment_musee_et_ville"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.segment_musee_et_ville"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_segment_musee_et_ville"
+			        }
+			      ]
+			    },
+			    "musee_france_has_itinéraire_formate": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.itinéraire_formate": {
+			          "Target": {
+			            "Entity": "musee_france.itinéraire_formate"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.itinéraire_formate"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_itinéraire_formates"
+			        }
+			      ]
+			    },
+			    "musee_france_has_lien_url_vers_site_meteo": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        },
+			        "musee_france.lien_url_vers_site_meteo": {
+			          "Target": {
+			            "Entity": "musee_france.lien_url_vers_site_meteo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france.lien_url_vers_site_meteo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_lien_url_vers_site_meteos"
+			        }
+			      ]
+			    },
+			    "info_actualisation_has_derniere_actualisation": {
+			      "Binding": {
+			        "ConceptualEntity": "Info_Actualisation"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "info_actualisation": {
+			          "Target": {
+			            "Entity": "info_actualisation"
+			          }
+			        },
+			        "info_actualisation.derniere_actualisation": {
+			          "Target": {
+			            "Entity": "info_actualisation.derniere_actualisation"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "info_actualisation"
+			            },
+			            "Object": {
+			              "Role": "info_actualisation.derniere_actualisation"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "info_actualisations_have_derniere_actualisations"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_date_heure_du_créneau": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "musee_france_prevision.date_heure_du_créneau": {
+			          "Target": {
+			            "Entity": "musee_france_prevision.date_heure_du_créneau"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "musee_france_prevision.date_heure_du_créneau"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_date_heure_du_créneaus"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_est_créneau_midi": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "musee_france_prevision.est_créneau_midi": {
+			          "Target": {
+			            "Entity": "musee_france_prevision.est_créneau_midi"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "musee_france_prevision.est_créneau_midi"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_est_créneau_midis"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_température_prévue_C": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "musee_france_prevision.température_prévue_C": {
+			          "Target": {
+			            "Entity": "musee_france_prevision.température_prévue_C"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "musee_france_prevision.température_prévue_C"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_température_prévue_C"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_humidité_prévue": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "musee_france_prevision.humidité_prévue": {
+			          "Target": {
+			            "Entity": "musee_france_prevision.humidité_prévue"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "musee_france_prevision.humidité_prévue"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_humidité_prévues"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_pression_prévue_hPa": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "musee_france_prevision.pression_prévue_hPa": {
+			          "Target": {
+			            "Entity": "musee_france_prevision.pression_prévue_hPa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "musee_france_prevision.pression_prévue_hPa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_pression_prévue_hPa"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_code_dicône": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "musee_france_prevision.code_dicône": {
+			          "Target": {
+			            "Entity": "musee_france_prevision.code_dicône"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "musee_france_prevision.code_dicône"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_code_dicônes"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_direction_du_vent": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "musee_france_prevision.direction_du_vent": {
+			          "Target": {
+			            "Entity": "musee_france_prevision.direction_du_vent"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "musee_france_prevision.direction_du_vent"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_direction_du_vents"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_URL_icône_météo": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "musee_france_prevision.URL_icône_météo": {
+			          "Target": {
+			            "Entity": "musee_france_prevision.URL_icône_météo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "musee_france_prevision.URL_icône_météo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_URL_icône_météos"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_fonds_meteo": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "fonds_meteo": {
+			          "Target": {
+			            "Entity": "fonds_meteo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "fonds_meteo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_fonds_meteos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fonds_meteo"
+			            },
+			            "Object": {
+			              "Role": "musee_france_prevision"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fonds_meteos_have_musee_france_previsions"
+			        }
+			      ]
+			    },
+			    "musee_france_prevision_has_musee_france": {
+			      "Binding": {
+			        "ConceptualEntity": "Musee_France_Prevision"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "musee_france_prevision": {
+			          "Target": {
+			            "Entity": "musee_france_prevision"
+			          }
+			        },
+			        "musee_france": {
+			          "Target": {
+			            "Entity": "musee_france"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france_prevision"
+			            },
+			            "Object": {
+			              "Role": "musee_france"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_previsions_have_musee_france"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "musee_france"
+			            },
+			            "Object": {
+			              "Role": "musee_france_prevision"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "musee_france_have_musee_france_previsions"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

@@ -1,0 +1,303 @@
+/// Une ligne par musée du Museums-PASS (128 musées, côté français). Combine le référentiel Excel (nom, adresse, coordonnées, lien d'infos pratiques) et la météo actuelle de l'API OpenWeather (endpoint weather) : température, ressenti, pression, humidité, vent et condition météo. Mise à jour à chaque actualisation (128 appels API). Alimente la page Musée et le segment de sélection.
+table Musee_France
+	lineageTag: 55b30872-0ffb-4f67-8210-7f4e14dadac8
+
+	/// Nom du musée. Clé de la relation avec Musee_France_Prevision.
+	column Musee
+		dataType: string
+		isHidden
+		lineageTag: 5f275bcf-e1a1-4d68-b549-846adb2893ac
+		summarizeBy: none
+		sourceColumn: Musee
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Code d’icône OpenWeather (ex. 03d), utilisé pour construire l’URL de l’icône météo.
+	column 'Code icône'
+		dataType: string
+		lineageTag: 2f373165-3f81-4132-b095-849c134a2eab
+		summarizeBy: none
+		sourceColumn: Code icône
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Température actuelle en °C (API OpenWeather, units=metric).
+	column 'Température (°C)'
+		dataType: double
+		lineageTag: c2f0cd12-c552-4c2c-b097-0c20972297ef
+		summarizeBy: none
+		sourceColumn: Température (°C)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Température ressentie en °C, qui tient compte du vent et de l’humidité.
+	column 'Température ressentie (°C)'
+		dataType: double
+		lineageTag: c2ed2b14-39d3-4c0a-99b3-dcc20be3a5ad
+		summarizeBy: none
+		sourceColumn: Température ressentie (°C)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Température minimale observée au même instant dans la zone urbaine. Ce n’est pas le minimum de la journée ; souvent égale à la température actuelle.
+	column 'Température min instantanée (°C)'
+		dataType: double
+		lineageTag: c1fc1faf-20da-4ebd-841c-73ff24908ea9
+		summarizeBy: none
+		sourceColumn: Température min instantanée (°C)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Température maximale observée au même instant dans la zone urbaine. Ce n’est pas le maximum de la journée ; souvent égale à la température actuelle.
+	column 'Température max instantanée (°C)'
+		dataType: double
+		lineageTag: bba5f329-31c4-4c55-9baf-ce4d8d4765df
+		summarizeBy: none
+		sourceColumn: Température max instantanée (°C)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Pression atmosphérique au niveau de la mer, en hPa.
+	column 'Pression (hPa)'
+		dataType: int64
+		formatString: 0
+		lineageTag: a9f5e1d7-96e3-4eef-bc1b-536f50a1ca14
+		summarizeBy: none
+		sourceColumn: Pression (hPa)
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Humidité relative, en %
+	column 'Humidité (%)'
+		dataType: int64
+		lineageTag: 12be1dcd-8d9a-4df9-ad3b-3c5eb660a5a7
+		summarizeBy: none
+		sourceColumn: Humidité (%)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Vitesse du vent (m/s)
+	column 'Vitesse du vent (m/s)'
+		dataType: double
+		lineageTag: 12e587f0-8dcc-486a-8664-85a0bb73d86c
+		summarizeBy: none
+		sourceColumn: Vitesse du vent (m/s)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Date et heure locales de la mesure météo (timestamp API converti en heure locale)
+	column date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 20778946-945c-4039-826a-e4178070e0ca
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Direction d’où vient le vent, en toutes lettres (16 secteurs).
+	column 'Direction du vent'
+		dataType: string
+		lineageTag: a5fb4e35-861b-4196-a903-acdab34e9b53
+		summarizeBy: none
+		sourceColumn: Direction du vent
+
+		annotation SummarizationSetBy = Automatic
+
+	/// URL de l’image Unsplash associée à la condition météo actuelle (fond de la page Musée).
+	column 'URL image de fond'
+		dataType: string
+		lineageTag: eca18e7b-bbdf-4378-943a-58fbc22b5068
+		summarizeBy: none
+		sourceColumn: URL image de fond
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Condition météo actuelle en français (ex. « Nuages dispersés »), issue de Fonds_Meteo.
+	column 'Condition météo'
+		dataType: string
+		lineageTag: 842b847a-d4a1-4b16-88c2-9419f52a0bd2
+		summarizeBy: none
+		sourceColumn: Condition météo
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Colonne calculée DAX : URL de l'icône météo OpenWeather (https://openweathermap.org/img/w/{icon}.png) pour la condition actuelle du musée. Affichée à côté du libellé météo sur la page Musée.
+	column 'URL icône météo' =
+			
+			// Reprend l'URL Meteocons construite dans Power Query (avec secours OpenWeather si la condition est inconnue)
+			Musee_France[URL icône Meteocons]
+		lineageTag: 5ce1dec7-b3b0-461d-b739-e36f6b8c2e92
+		dataCategory: WebUrl
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Qualification du vent selon l’échelle de Beaufort (ex. « Très légère brise »).
+	column 'Force du vent'
+		dataType: string
+		lineageTag: bc81286c-fe01-44a8-a21f-a566682e52a8
+		summarizeBy: none
+		sourceColumn: Force du vent
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Colonne technique conservée volontairement : lien Google Maps construit à partir de l'adresse brute. Plus utilisée pour la navigation (remplacée par Itinéraire formate), mais référencée par un réglage résiduel des boutons Itinéraire et Infos pratiques ; sa suppression casse ces boutons.
+	column itiniraire
+		dataType: string
+		isHidden
+		lineageTag: f85c2e2a-8c02-4f1a-be50-14ed57a78385
+		dataCategory: WebUrl
+		summarizeBy: none
+		sourceColumn: itiniraire
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// URL de la fiche du musée sur museumspass.com (bouton « Infos pratiques »).
+	column 'Lien info pratiques'
+		dataType: string
+		lineageTag: 175702a8-e218-4862-82ba-d79f8ecf23b5
+		dataCategory: WebUrl
+		summarizeBy: none
+		sourceColumn: Lien info pratiques
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Clé de tri (Ville - Musée) du segment : classe les musées par ville
+	column 'Ville et musee (colonne ref)'
+		dataType: string
+		isHidden
+		lineageTag: 44a8cfb9-82b4-4a5d-9cb5-8d9444c417dc
+		summarizeBy: none
+		sourceColumn: Ville et musee (colonne ref)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Libellé « Musée - Ville » affiché dans le segment de sélection. Trié par [Tri segment].
+	column 'Segment musee et ville'
+		dataType: string
+		lineageTag: 2d366198-a801-411d-8091-595013cf9259
+		summarizeBy: none
+		sourceColumn: Segment musee et ville
+		sortByColumn: 'Ville et musee (colonne ref)'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	/// URL Google Maps d’itinéraire vers l’adresse formatée du musée (bouton « Itinéraire »).
+	column 'Itinéraire formate'
+		dataType: string
+		lineageTag: d03303fa-7f70-4482-95ad-83362bd24e61
+		summarizeBy: none
+		sourceColumn: Itinéraire formate
+
+		annotation SummarizationSetBy = Automatic
+
+	/// URL de la page OpenWeather de la ville du musée (bouton « Voir la météo en temps réel »).
+	column 'lien url vers site meteo'
+		dataType: string
+		lineageTag: 9d626975-b9a0-4086-ba7a-abbebedda255
+		dataCategory: WebUrl
+		summarizeBy: none
+		sourceColumn: lien url vers site meteo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Crédit photo'
+		dataType: string
+		lineageTag: 90257820-2acf-4c83-863b-48fa4e10e51a
+		summarizeBy: none
+		sourceColumn: Crédit photo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'URL icône Meteocons'
+		dataType: string
+		lineageTag: d0f7638c-80bc-4800-927c-d20c6a954449
+		summarizeBy: none
+		sourceColumn: URL icône Meteocons
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Musee_France = m
+		mode: import
+		source = ```
+				let
+				    // Référentiel commun des musées (voir requête Referentiel_Musees)
+				    Source = Referentiel_Musees,
+				    // Appelle l'API météo actuelle pour chaque musée à partir de ses coordonnées
+				    #"Appeler API météo actuelle" = Table.AddColumn(Source, "Meteo", each Json.Document(Web.Contents(
+				        "https://api.openweathermap.org",
+				        [ RelativePath = "data/2.5/weather",
+				          Query = [ lat = [Valeur], lon = [ValeurLong], APPID = ApiKey, units = "Metric" ] ]))),
+				    // Ne développe que les champs utiles de la réponse JSON
+				    #"Développer réponse API" = Table.ExpandRecordColumn(#"Appeler API météo actuelle", "Meteo", {"weather", "main", "wind", "dt", "timezone", "id"}, {"weather", "main", "wind", "dt", "timezone", "id"}),
+				    // weather est une liste : l'API peut renvoyer plusieurs conditions simultanées (d'où la déduplication en fin de requête)
+				    #"Développer conditions météo" = Table.ExpandListColumn(#"Développer réponse API", "weather"),
+				    #"Développer détail condition" = Table.ExpandRecordColumn(#"Développer conditions météo", "weather", {"description", "icon"}, {"description", "icon"}),
+				    #"Développer mesures" = Table.ExpandRecordColumn(#"Développer détail condition", "main", {"temp", "feels_like", "temp_min", "temp_max", "pressure", "humidity"}, {"temp", "feels_like", "temp_min", "temp_max", "pressure", "humidity"}),
+				    #"Développer vent" = Table.ExpandRecordColumn(#"Développer mesures", "wind", {"speed", "deg"}, {"speed", "degrees"}),
+				    // Convertit le timestamp Unix (dt, UTC) en date/heure locale du musée en ajoutant le décalage horaire fourni par l'API (timezone, en secondes, heure d'été incluse)
+				    #"Calculer date locale" = Table.AddColumn(#"Développer vent", "date", each #datetime(1970, 1, 1, 0, 0, 0) + #duration(0, 0, 0, [dt] + [timezone]), type datetime),
+				    // Direction du vent en toutes lettres (16 secteurs de 22,5°)
+				    #"Ajouter direction vent" = Table.AddColumn(#"Calculer date locale", "wind direction description", each if [degrees] >= 348.75 then "Nord" else if [degrees] > 326.25 then "Nord-nord-ouest" else if [degrees] > 303.75 then "Nord-ouest" else if [degrees] > 281.25 then "Ouest-nord-ouest" else if [degrees] > 258.75 then "Ouest" else if [degrees] > 236.25 then "Ouest-sud-ouest" else if [degrees] > 213.75 then "Sud-ouest" else if [degrees] > 191.25 then "Sud-sud-ouest" else if [degrees] > 168.75 then "Sud" else if [degrees] > 146.25 then "Sud-sud-est" else if [degrees] > 123.75 then "Sud-est" else if [degrees] > 101.25 then "Est-sud-est" else if [degrees] > 78.75 then "Est" else if [degrees] > 56.25 then "Est-nord-est" else if [degrees] > 33.75 then "Nord-est" else if [degrees] > 11.25 then "Nord-nord-est" else if [degrees] >= 0 then "Nord" else null, type text),
+				    // Fusion avec Wallpaper sur la condition météo (en anglais) : image de fond et libellé français
+				    #"Fusionner Wallpaper" = Table.NestedJoin(#"Ajouter direction vent", {"description"}, Fonds_Meteo, {"Weather"}, "Wallpaper", JoinKind.LeftOuter),
+				    #"Développer Wallpaper" = Table.ExpandTableColumn(#"Fusionner Wallpaper", "Wallpaper", {"URL", "Weather - Francais", "Unsplash Credit", "Icône"}, {"URL.1", "Weather - Francais", "Unsplash Credit", "Icône"}),
+				       // Crédit photo lisible (« Photo : Nom / Unsplash ») extrait du code HTML fourni par Unsplash
+				    #"Ajouter crédit photo" = Table.AddColumn(#"Développer Wallpaper", "Crédit photo", each if [Unsplash Credit] = null then null else "Photo : " & Text.Trim(Text.BetweenDelimiters([Unsplash Credit], ">", "<")) & " / Unsplash", type text),
+				    // URL de l'icône Meteocons (Bas Milius, licence MIT) : variante jour/nuit selon le code OpenWeather (d/n) ; icône OpenWeather en secours si la condition est absente de Fonds_Meteo
+				    #"Ajouter URL icône" = Table.AddColumn(#"Ajouter crédit photo", "URL icône Meteocons", each if [Icône] = null then "https://openweathermap.org/img/w/" & [icon] & ".png" else "https://cdn.jsdelivr.net/npm/@bybas/weather-icons@2.0.0/production/line/all/" & Text.Replace([Icône], "[dn]", if Text.End([icon], 1) = "n" then "night" else "day") & ".svg", type text),
+				    
+				    // Force du vent selon l'échelle de Beaufort (vitesse en m/s)
+				    #"Ajouter force vent" = Table.AddColumn( #"Ajouter URL icône", "Wind speed desciption", each if [speed] >= 32 then "Ouragan" else if [speed] >= 28 then "Violente tempête" else if [speed] >= 24 then "Fort coup de vent" else if [speed] >= 20.5 then "Coup de vent" else if [speed] >= 17 then "Grand vent frais" else if [speed] >= 11 then "Vent frais" else if [speed] >= 8.5 then "Bonne brise" else if [speed] >= 5.5 then "Jolie brise" else if [speed] >= 3.5 then "Petite brise" else if [speed] >= 2 then "Légère brise" else if [speed] >= 0.5 then "Très légère brise" else "Calme", type text),
+				    // Code postal CEDEX de la BNU (67070) remplacé par le code postal standard, pour un itinéraire correct
+				    #"Corriger code postal BNU" = Table.ReplaceValue(#"Ajouter force vent", "67070", "67000", Replacer.ReplaceText, {"Adresse"}),
+				    // Lien Google Maps (itinéraire) à partir de l'adresse brute. À vérifier : probablement inutilisé (remplacé par Itinéraire formate)
+				    #"Ajouter lien itinéraire" = Table.AddColumn(#"Corriger code postal BNU", "itiniraire", each "https://www.google.com/maps/dir//" & [Adresse], type text),
+				    // Lien Google Maps (itinéraire) à partir de l'adresse formatée : utilisé par le bouton Itinéraire
+				    #"Ajouter lien itinéraire formaté" = Table.AddColumn(#"Ajouter lien itinéraire", "Itinéraire formate", each "https://www.google.com/maps/dir//" & [Adresse formatee], type text),
+				    // Nettoie les URL museumspass : parenthèses et guillemets remplacés par des tirets, apostrophes supprimées (format des URL du site)
+				    #"Nettoyer liens museumspass" = Table.TransformColumns(#"Ajouter lien itinéraire formaté", {{"Lien info pratiques", each Text.Replace(Text.Replace(Text.Replace(Text.Replace(_, "(", "-"), ")", "-"), "'", ""), """", "-"), type text}}),
+				    // Deux URL museumspass qui ne suivent pas la règle générale : corrigées à la main
+				    #"Corriger lien Schoelcher" = Table.ReplaceValue(#"Nettoyer liens museumspass", "https://www.museumspass.com/fr/musee/Espace-muséographique-«Victor-Schoelcher,-son-œuvre»", "https://www.museumspass.com/fr/musee/espace-museographique-victor-schoelcher-son-oeuvre", Replacer.ReplaceText, {"Lien info pratiques"}),
+				    #"Corriger lien Frac" = Table.ReplaceValue(#"Corriger lien Schoelcher", "https://www.museumspass.com/fr/musee/Fonds-régional-dart-contemporain--Frac--de-Franche-Comté", "https://www.museumspass.com/fr/musee/fonds-regional-dart-contemporain-frac-de-franche-comte", Replacer.ReplaceText, {"Lien info pratiques"}),
+				    #"Supprimer doubles tirets" = Table.ReplaceValue(#"Corriger lien Frac", "--", "-", Replacer.ReplaceText, {"Lien info pratiques"}),
+				    // Libellé du segment : espace avant le tiret (« Musée - Ville »)
+				    #"Formater libellé segment" = Table.ReplaceValue(#"Supprimer doubles tirets", "- ", " - ", Replacer.ReplaceText, {"Segment musee et ville"}),
+				    // Lien vers la page OpenWeather de la ville du musée (bouton « Voir la météo en temps réel »)
+				    #"Ajouter lien OpenWeather" = Table.AddColumn(#"Formater libellé segment", "lien url vers site meteo", each "https://openweathermap.org/city/" & Text.From([id]), type text),
+				    // Une ligne par musée (voir commentaire sur la liste weather)
+				    #"Supprimer doublons musée" = Table.Distinct(#"Ajouter lien OpenWeather", {"Musee"}),
+				    // Ne conserve que les colonnes utilisées par le rapport (visuels, mesures, tri du segment, relation)
+				    #"Garder colonnes utiles" = Table.SelectColumns(#"Supprimer doublons musée", {"Musee", "Segment musee et ville", "Ville et musee (colonne ref)", "Lien info pratiques", "itiniraire", "Itinéraire formate", "lien url vers site meteo", "URL.1", "Crédit photo", "URL icône Meteocons", "icon", "Weather - Francais", "temp", "feels_like", "temp_min", "temp_max", "pressure", "humidity", "speed", "wind direction description", "Wind speed desciption", "date"}),
+				    // Typage final et explicite de toutes les colonnes conservées
+				    #"Typer colonnes" = Table.TransformColumnTypes(#"Garder colonnes utiles", {{"Musee", type text}, {"Segment musee et ville", type text}, {"Ville et musee (colonne ref)", type text}, {"Lien info pratiques", type text}, {"itiniraire", type text}, {"Itinéraire formate", type text}, {"lien url vers site meteo", type text}, {"URL.1", type text}, {"Crédit photo", type text}, {"URL icône Meteocons", type text}, {"icon", type text}, {"Weather - Francais", type text}, {"temp", type number}, {"feels_like", type number}, {"temp_min", type number}, {"temp_max", type number}, {"pressure", Int64.Type}, {"humidity", Int64.Type}, {"speed", type number}, {"wind direction description", type text}, {"Wind speed desciption", type text}, {"date", type datetime}}),
+				    #"Colonnes renommées" = Table.RenameColumns(#"Typer colonnes",{{"pressure", "Pression (hPa)"}, {"temp_max", "Température max instantanée (°C)"}, {"temp_min", "Température min instantanée (°C)"}, {"humidity", "Humidité (%)"}, {"speed", "Vitesse du vent (m/s)"}, {"wind direction description", "Direction du vent"}, {"Wind speed desciption", "Force du vent"}, {"feels_like", "Température ressentie (°C)"}, {"URL.1", "URL image de fond"}, {"Weather - Francais", "Condition météo"}, {"temp", "Température (°C)"}, {"icon", "Code icône"}})
+				in
+				    #"Colonnes renommées"
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

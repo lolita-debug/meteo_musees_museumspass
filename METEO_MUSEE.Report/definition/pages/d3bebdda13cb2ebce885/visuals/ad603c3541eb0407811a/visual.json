@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "ad603c3541eb0407811a",
+  "position": {
+    "x": 39.878419452887542,
+    "y": 274.28571428571428,
+    "z": 4,
+    "height": 150,
+    "width": 640,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Comment ça marche",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "1.  Ouvrez la page Musée et choisissez un musée dans la liste en haut à droite.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#d4d4d4"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "2.  Lisez la météo du jour : températures, vent, pression et humidité.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#d4d4d4"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "3.  Consultez les prévisions à 5 jours, puis ouvrez l'itinéraire ou la fiche pratique du musée.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#d4d4d4"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

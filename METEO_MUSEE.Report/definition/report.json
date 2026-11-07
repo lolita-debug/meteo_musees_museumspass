@@ -1,0 +1,121 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY23SU11",
+      "reportVersionAtImport": {
+        "visual": "1.8.86",
+        "report": "2.0.86",
+        "page": "1.3.86"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "D2_sombre_accessible_(Okabe-It46356328851146733.json",
+      "reportVersionAtImport": {
+        "visual": "2.14.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "simpleImageEBC4593F96F1425FB3D84C5BF02B5075"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY23SU11",
+          "path": "BaseThemes/CY23SU11.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "barometer-icon8377805210404281.svg",
+          "path": "barometer-icon8377805210404281.svg",
+          "type": "Image"
+        },
+        {
+          "name": "BOUTON-EN-SAVOIR-PLUS-300x1111943162622780341.png",
+          "path": "BOUTON-EN-SAVOIR-PLUS-300x1111943162622780341.png",
+          "type": "Image"
+        },
+        {
+          "name": "D2_sombre_accessible_(Okabe-It46356328851146733.json",
+          "path": "D2_sombre_accessible_(Okabe-It46356328851146733.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "drop-humidity-icon8454010243934387.svg",
+          "path": "drop-humidity-icon8454010243934387.svg",
+          "type": "Image"
+        },
+        {
+          "name": "illustration_accueil.svg",
+          "path": "illustration_accueil.svg",
+          "type": "Image"
+        },
+        {
+          "name": "map-4x5893276914499412.png",
+          "path": "map-4x5893276914499412.png",
+          "type": "Image"
+        },
+        {
+          "name": "thermometer-icon24708262243280088.svg",
+          "path": "thermometer-icon24708262243280088.svg",
+          "type": "Image"
+        },
+        {
+          "name": "wind-icon5434696147828602.svg",
+          "path": "wind-icon5434696147828602.svg",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

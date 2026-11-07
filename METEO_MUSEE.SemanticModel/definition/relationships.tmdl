@@ -1,0 +1,4 @@
+relationship AutoDetected_aa4dd1d6-2c06-4ccf-8fcf-314eece0abed
+	fromColumn: Musee_France_Prevision.Musée
+	toColumn: Musee_France.Musee
+

@@ -1,0 +1,85 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 289.06676173494208
+          },
+          "nodeIndex": "Info_Actualisation",
+          "nodeLineageTag": "be4fb1fc-97d3-4441-8adf-48e80e7b2b24",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 345.38305001469371,
+            "y": 432.77793622490344
+          },
+          "nodeIndex": "Musee_France",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 798.98305611820933,
+            "y": 201.71117448996142
+          },
+          "nodeIndex": "Musee_France_Prevision",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 118.34069802458067
+          },
+          "nodeIndex": "Fonds_Meteo",
+          "nodeLineageTag": "622136e8-0f53-4858-b509-2902ce41f460",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 414.77793622490344
+          },
+          "nodeIndex": "_Mesures",
+          "nodeLineageTag": "641a0568-977a-4552-8daa-9972ea32d3c8",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Toutes les tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Toutes les tables",
+  "defaultDiagram": "Toutes les tables"
+}

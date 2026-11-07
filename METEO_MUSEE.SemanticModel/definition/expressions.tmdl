@@ -1,0 +1,45 @@
+expression ApiKey = "YOUR_API_KEY" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 8959dd9c-b757-4f5b-8e7f-ecd33cd84f0e
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+/// URL du classeur Excel du référentiel des musées. À adapter selon l'emplacement du fichier
+expression CheminSource = "https://votre-tenant-my.sharepoint.com/personal/votre_compte/Documents/GEOLOCALISATION_MUSEE_FRANCE.xlsx" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: aef1bb7a-0d83-455a-a186-2359afdec631
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+/// Référentiel commun des musées (128 lignes, issu du Museums-PASS). Requête intermédiaire non chargée, utilisée par Musee France et Musee France Prévision.
+expression Referentiel_Musees =
+		let
+		    // Classeur Excel du référentiel des musées (emplacement défini par le paramètre CheminSource)
+		    Source = Excel.Workbook(Web.Contents(CheminSource), null, true),
+		    Feuille = Source{[Item="Feuil1",Kind="Sheet"]}[Data],
+		    #"Promouvoir en-têtes" = Table.PromoteHeaders(Feuille, [PromoteAllScalars=true]),
+		    // Toutes les colonnes en texte : lat/lon restent en texte avec un point, format attendu par l'API
+		    #"Typer colonnes" = Table.TransformColumnTypes(#"Promouvoir en-têtes", List.Transform(Table.ColumnNames(#"Promouvoir en-têtes"), each {_, type text}))
+		in
+		    #"Typer colonnes"
+	lineageTag: 918f17a9-6d10-497c-962a-d86366f88e34
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+/// Table de correspondance saisie manuellement : une ligne par condition météo OpenWeather (17 conditions, libellé anglais tel que renvoyé par l'API), avec l'URL d'une image de fond Unsplash, le crédit photo et le libellé français. Utilisée par les fusions Power Query de Musee_France et Musee_France_Prevision. Limite : une condition absente de la liste n'a ni image ni libellé français.
+expression Fonds_Meteo =
+		let
+		    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("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", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Weather = _t, URL = _t, #"Unsplash Credit" = _t, #"Weather - Francais" = _t, Icône = _t]),
+		    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Weather", type text}, {"URL", type text}})
+		in
+		    #"Changed Type"
+	lineageTag: 2a483267-2dd2-43bd-b9a6-29bf4fb541a7
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

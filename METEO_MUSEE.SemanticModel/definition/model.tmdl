@@ -1,0 +1,22 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Fonds_Meteo","_Mesures","Musee_France","Musee_France_Prevision","ApiKey","Info_Actualisation","CheminSource","Referentiel_Musees"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table _Mesures
+ref table Musee_France
+ref table Info_Actualisation
+ref table Musee_France_Prevision
+
+ref cultureInfo fr-FR
+
